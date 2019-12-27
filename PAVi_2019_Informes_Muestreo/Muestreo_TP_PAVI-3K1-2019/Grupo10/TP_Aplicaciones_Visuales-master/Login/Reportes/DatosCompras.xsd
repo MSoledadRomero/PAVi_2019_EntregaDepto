@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosCompras" targetNamespace="http://tempuri.org/DatosCompras.xsd" xmlns:mstns="http://tempuri.org/DatosCompras.xsd" xmlns="http://tempuri.org/DatosCompras.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="biblioteca1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="biblioteca1ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TP_Aplicaciones_Visuales.Properties.Settings.GlobalReference.Default.biblioteca1ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtCompraTableAdapter" GeneratorDataComponentClassName="dtCompraTableAdapter" Name="dtCompra" UserDataComponentName="dtCompraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillInitialice" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataInitialice" GeneratorSourceName="FillInitialice" GetMethodModifier="Public" GetMethodName="GetDataInitialice" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataInitialice" UserSourceName="FillInitialice">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Compra.idCompra, Compra.idProveedor, Compra.fechaCompra, Proveedor.razonSocial, Libro.titulo, DetalleCompra.idLibro, DetalleCompra.cantidad
+FROM            Compra INNER JOIN
+                         DetalleCompra ON Compra.idCompra = DetalleCompra.idCompra INNER JOIN
+                         Libro ON DetalleCompra.idLibro = Libro.idLibro INNER JOIN
+                         Proveedor ON Compra.idProveedor = Proveedor.idProveedor
+WHERE        (Compra.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idCompra" DataSetColumn="idCompra" />
+              <Mapping SourceColumn="idProveedor" DataSetColumn="idProveedor" />
+              <Mapping SourceColumn="fechaCompra" DataSetColumn="fechaCompra" />
+              <Mapping SourceColumn="razonSocial" DataSetColumn="razonSocial" />
+              <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
+              <Mapping SourceColumn="idLibro" DataSetColumn="idLibro" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosCompras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosCompras" msprop:Generator_UserDSName="DatosCompras">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtCompra" msprop:Generator_TableClassName="dtCompraDataTable" msprop:Generator_TableVarName="tabledtCompra" msprop:Generator_TablePropName="dtCompra" msprop:Generator_RowDeletingName="dtCompraRowDeleting" msprop:Generator_RowChangingName="dtCompraRowChanging" msprop:Generator_RowEvHandlerName="dtCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCompraRowDeleted" msprop:Generator_UserTableName="dtCompra" msprop:Generator_RowChangedName="dtCompraRowChanged" msprop:Generator_RowEvArgName="dtCompraRowChangeEvent" msprop:Generator_RowClassName="dtCompraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idCompra" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCompra" msprop:Generator_ColumnPropNameInRow="idCompra" msprop:Generator_ColumnPropNameInTable="idCompraColumn" msprop:Generator_UserColumnName="idCompra" type="xs:int" />
+              <xs:element name="idProveedor" msprop:Generator_ColumnVarNameInTable="columnidProveedor" msprop:Generator_ColumnPropNameInRow="idProveedor" msprop:Generator_ColumnPropNameInTable="idProveedorColumn" msprop:Generator_UserColumnName="idProveedor" type="xs:int" minOccurs="0" />
+              <xs:element name="fechaCompra" msprop:Generator_ColumnVarNameInTable="columnfechaCompra" msprop:Generator_ColumnPropNameInRow="fechaCompra" msprop:Generator_ColumnPropNameInTable="fechaCompraColumn" msprop:Generator_UserColumnName="fechaCompra" type="xs:dateTime" />
+              <xs:element name="razonSocial" msprop:Generator_ColumnVarNameInTable="columnrazonSocial" msprop:Generator_ColumnPropNameInRow="razonSocial" msprop:Generator_ColumnPropNameInTable="razonSocialColumn" msprop:Generator_UserColumnName="razonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_UserColumnName="titulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idLibro" msprop:Generator_ColumnVarNameInTable="columnidLibro" msprop:Generator_ColumnPropNameInRow="idLibro" msprop:Generator_ColumnPropNameInTable="idLibroColumn" msprop:Generator_UserColumnName="idLibro" type="xs:int" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtCompra" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

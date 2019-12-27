@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosEstadisticasGraficas" targetNamespace="http://tempuri.org/DatosEstadisticasGraficas.xsd" xmlns:mstns="http://tempuri.org/DatosEstadisticasGraficas.xsd" xmlns="http://tempuri.org/DatosEstadisticasGraficas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="biblioteca1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="biblioteca1ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TP_Aplicaciones_Visuales.Properties.Settings.GlobalReference.Default.biblioteca1ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillLibrosPorGenero" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataLibrosPorGenero" GeneratorSourceName="FillLibrosPorGenero" GetMethodModifier="Public" GetMethodName="GetDataLibrosPorGenero" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataLibrosPorGenero" UserSourceName="FillLibrosPorGenero">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Libro.idLibro, Libro.titulo, Libro.añoEdicion, Libro.idGenero, Libro.idAutor, Libro.idEditorial, Libro.sector, Libro.estante, Genero.nombre
+FROM            Libro INNER JOIN
+                         Genero ON Libro.idGenero = Genero.idGenero
+WHERE        (Libro.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idLibro" DataSetColumn="idLibro" />
+              <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
+              <Mapping SourceColumn="añoEdicion" DataSetColumn="añoEdicion" />
+              <Mapping SourceColumn="idGenero" DataSetColumn="idGenero" />
+              <Mapping SourceColumn="idAutor" DataSetColumn="idAutor" />
+              <Mapping SourceColumn="idEditorial" DataSetColumn="idEditorial" />
+              <Mapping SourceColumn="sector" DataSetColumn="sector" />
+              <Mapping SourceColumn="estante" DataSetColumn="estante" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtCompraPorProveedorTableAdapter" GeneratorDataComponentClassName="dtCompraPorProveedorTableAdapter" Name="dtCompraPorProveedor" UserDataComponentName="dtCompraPorProveedorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillCompraPorProveedor" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataCompraPorProveedor" GeneratorSourceName="FillCompraPorProveedor" GetMethodModifier="Public" GetMethodName="GetDataCompraPorProveedor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataCompraPorProveedor" UserSourceName="FillCompraPorProveedor">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Compra.idCompra, Compra.idProveedor, Compra.fechaCompra, Proveedor.razonSocial
+FROM            Compra INNER JOIN
+                         Proveedor ON Compra.idProveedor = Proveedor.idProveedor
+WHERE        (Compra.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idCompra" DataSetColumn="idCompra" />
+              <Mapping SourceColumn="idProveedor" DataSetColumn="idProveedor" />
+              <Mapping SourceColumn="fechaCompra" DataSetColumn="fechaCompra" />
+              <Mapping SourceColumn="razonSocial" DataSetColumn="razonSocial" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByCompraPorProveedorPorFecha" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCompraPorProveedorPorFecha" GeneratorSourceName="FillByCompraPorProveedorPorFecha" GetMethodModifier="Public" GetMethodName="GetDataByCompraPorProveedorPorFecha" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCompraPorProveedorPorFecha" UserSourceName="FillByCompraPorProveedorPorFecha">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Compra.idCompra, Compra.idProveedor, Compra.fechaCompra, Proveedor.razonSocial
+FROM            Compra INNER JOIN
+                         Proveedor ON Compra.idProveedor = Proveedor.idProveedor
+WHERE        (Compra.borrado = 0) AND (Compra.fechaCompra&gt;=@fechaDesde AND Compra.fechaCompra&lt;=@fechaHasta)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="fechaDesde" ColumnName="fechaCompra" DataSourceName="biblioteca1.dbo.Compra" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@fechaDesde" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fechaHasta" ColumnName="fechaCompra" DataSourceName="biblioteca1.dbo.Compra" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@fechaHasta" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtPrestamoPorSocioTableAdapter" GeneratorDataComponentClassName="dtPrestamoPorSocioTableAdapter" Name="dtPrestamoPorSocio" UserDataComponentName="dtPrestamoPorSocioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillPrestamoPorSocio" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPrestamoPorSocio" GeneratorSourceName="FillPrestamoPorSocio" GetMethodModifier="Public" GetMethodName="GetDataPrestamoPorSocio" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPrestamoPorSocio" UserSourceName="FillPrestamoPorSocio">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Prestamo.idPrestamo, Prestamo.idSocio, Socio.nombre, Socio.apellido, Socio.numeroDocumento
+FROM            Prestamo INNER JOIN
+                         Socio ON Prestamo.idSocio = Socio.idSocio
+WHERE        (Prestamo.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idPrestamo" DataSetColumn="idPrestamo" />
+              <Mapping SourceColumn="idSocio" DataSetColumn="idSocio" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="numeroDocumento" DataSetColumn="numeroDocumento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtPrestamoPorLibroTableAdapter" GeneratorDataComponentClassName="dtPrestamoPorLibroTableAdapter" Name="dtPrestamoPorLibro" UserDataComponentName="dtPrestamoPorLibroTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillPrestamoPorLibro" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPrestamoPorLibro" GeneratorSourceName="FillPrestamoPorLibro" GetMethodModifier="Public" GetMethodName="GetDataPrestamoPorLibro" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataPrestamoPorLibro" UserSourceName="FillPrestamoPorLibro">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Prestamo.idPrestamo, DetallePrestamo.idLibro, Libro.titulo, Prestamo.idSocio, Prestamo.idEstadoPrestamo, Prestamo.fechaPrestamo, Prestamo.fechaLimite, DetallePrestamo.idPrestamo AS Expr1, 
+                         DetallePrestamo.idDetallePrestamo, DetallePrestamo.idEstadoDetallePrestamo, DetallePrestamo.idEjemplar, Libro.añoEdicion, Libro.idGenero, DetallePrestamo.fechaDevolucion, Libro.idLibro AS 'IDLIBRO'
+FROM            Prestamo INNER JOIN
+                         DetallePrestamo ON Prestamo.idPrestamo = DetallePrestamo.idPrestamo INNER JOIN
+                         Libro ON DetallePrestamo.idLibro = Libro.idLibro
+WHERE        (Prestamo.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idPrestamo" DataSetColumn="idPrestamo" />
+              <Mapping SourceColumn="idLibro" DataSetColumn="idLibro" />
+              <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
+              <Mapping SourceColumn="idSocio" DataSetColumn="idSocio" />
+              <Mapping SourceColumn="idEstadoPrestamo" DataSetColumn="idEstadoPrestamo" />
+              <Mapping SourceColumn="fechaPrestamo" DataSetColumn="fechaPrestamo" />
+              <Mapping SourceColumn="fechaLimite" DataSetColumn="fechaLimite" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="idDetallePrestamo" DataSetColumn="idDetallePrestamo" />
+              <Mapping SourceColumn="idEstadoDetallePrestamo" DataSetColumn="idEstadoDetallePrestamo" />
+              <Mapping SourceColumn="idEjemplar" DataSetColumn="idEjemplar" />
+              <Mapping SourceColumn="añoEdicion" DataSetColumn="añoEdicion" />
+              <Mapping SourceColumn="idGenero" DataSetColumn="idGenero" />
+              <Mapping SourceColumn="fechaDevolucion" DataSetColumn="fechaDevolucion" />
+              <Mapping SourceColumn="IDLIBRO1" DataSetColumn="IDLIBRO1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtLibroPorAñoTableAdapter" GeneratorDataComponentClassName="dtLibroPorAñoTableAdapter" Name="dtLibroPorAño" UserDataComponentName="dtLibroPorAñoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectName="biblioteca1.dbo.Libro" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillLibroPorAño" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataLibroPorAño" GeneratorSourceName="FillLibroPorAño" GetMethodModifier="Public" GetMethodName="GetDataLibroPorAño" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataLibroPorAño" UserSourceName="FillLibroPorAño">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Libro] WHERE (([añoEdicion] = @Original_añoEdicion) AND ([titulo] = @Original_titulo) AND ([idLibro] = @Original_idLibro))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_añoEdicion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="añoEdicion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_titulo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="titulo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idLibro" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idLibro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        añoEdicion, titulo, idLibro
+FROM            Libro
+WHERE        (borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Libro] SET [añoEdicion] = @añoEdicion, [titulo] = @titulo WHERE (([añoEdicion] = @Original_añoEdicion) AND ([titulo] = @Original_titulo) AND ([idLibro] = @Original_idLibro));
+SELECT añoEdicion, titulo, idLibro FROM Libro WHERE (idLibro = @idLibro)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@añoEdicion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="añoEdicion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@titulo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="titulo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_añoEdicion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="añoEdicion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_titulo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="titulo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idLibro" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idLibro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idLibro" ColumnName="idLibro" DataSourceName="biblioteca1.dbo.Libro" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idLibro" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idLibro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="añoEdicion" DataSetColumn="añoEdicion" />
+              <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
+              <Mapping SourceColumn="idLibro" DataSetColumn="idLibro" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtProveedoresPorCiudadTableAdapter" GeneratorDataComponentClassName="dtProveedoresPorCiudadTableAdapter" Name="dtProveedoresPorCiudad" UserDataComponentName="dtProveedoresPorCiudadTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillProveedoresPorCiudad" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataProveedoresPorCiudad" GeneratorSourceName="FillProveedoresPorCiudad" GetMethodModifier="Public" GetMethodName="GetDataProveedoresPorCiudad" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataProveedoresPorCiudad" UserSourceName="FillProveedoresPorCiudad">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Proveedor.idProveedor, Proveedor.razonSocial, Proveedor.idBarrio, Proveedor.telefono, Proveedor.mail, Barrio.idCiudad, Barrio.nombre AS 'Barrio', Ciudad.idCiudad AS Expr1, Ciudad.nombre AS 'Ciudad'
+FROM            Proveedor INNER JOIN
+                         Barrio ON Proveedor.idBarrio = Barrio.idBarrio INNER JOIN
+                         Ciudad ON Barrio.idCiudad = Ciudad.idCiudad</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idProveedor" DataSetColumn="idProveedor" />
+              <Mapping SourceColumn="razonSocial" DataSetColumn="razonSocial" />
+              <Mapping SourceColumn="idBarrio" DataSetColumn="idBarrio" />
+              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
+              <Mapping SourceColumn="mail" DataSetColumn="mail" />
+              <Mapping SourceColumn="idCiudad" DataSetColumn="idCiudad" />
+              <Mapping SourceColumn="Barrio" DataSetColumn="Barrio" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Ciudad" DataSetColumn="Ciudad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosEstadisticasGraficas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosEstadisticasGraficas" msprop:Generator_UserDSName="DatosEstadisticasGraficas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idLibro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidLibro" msprop:Generator_ColumnPropNameInRow="idLibro" msprop:Generator_ColumnPropNameInTable="idLibroColumn" msprop:Generator_UserColumnName="idLibro" type="xs:int" />
+              <xs:element name="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_UserColumnName="titulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="añoEdicion" msprop:Generator_ColumnVarNameInTable="columnañoEdicion" msprop:Generator_ColumnPropNameInRow="añoEdicion" msprop:Generator_ColumnPropNameInTable="añoEdicionColumn" msprop:Generator_UserColumnName="añoEdicion" type="xs:int" />
+              <xs:element name="idGenero" msprop:Generator_ColumnVarNameInTable="columnidGenero" msprop:Generator_ColumnPropNameInRow="idGenero" msprop:Generator_ColumnPropNameInTable="idGeneroColumn" msprop:Generator_UserColumnName="idGenero" type="xs:int" minOccurs="0" />
+              <xs:element name="idAutor" msprop:Generator_ColumnVarNameInTable="columnidAutor" msprop:Generator_ColumnPropNameInRow="idAutor" msprop:Generator_ColumnPropNameInTable="idAutorColumn" msprop:Generator_UserColumnName="idAutor" type="xs:int" minOccurs="0" />
+              <xs:element name="idEditorial" msprop:Generator_ColumnVarNameInTable="columnidEditorial" msprop:Generator_ColumnPropNameInRow="idEditorial" msprop:Generator_ColumnPropNameInTable="idEditorialColumn" msprop:Generator_UserColumnName="idEditorial" type="xs:int" minOccurs="0" />
+              <xs:element name="sector" msprop:Generator_ColumnVarNameInTable="columnsector" msprop:Generator_ColumnPropNameInRow="sector" msprop:Generator_ColumnPropNameInTable="sectorColumn" msprop:Generator_UserColumnName="sector">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estante" msprop:Generator_ColumnVarNameInTable="columnestante" msprop:Generator_ColumnPropNameInRow="estante" msprop:Generator_ColumnPropNameInTable="estanteColumn" msprop:Generator_UserColumnName="estante" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtCompraPorProveedor" msprop:Generator_TableClassName="dtCompraPorProveedorDataTable" msprop:Generator_TableVarName="tabledtCompraPorProveedor" msprop:Generator_TablePropName="dtCompraPorProveedor" msprop:Generator_RowDeletingName="dtCompraPorProveedorRowDeleting" msprop:Generator_RowChangingName="dtCompraPorProveedorRowChanging" msprop:Generator_RowEvHandlerName="dtCompraPorProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCompraPorProveedorRowDeleted" msprop:Generator_UserTableName="dtCompraPorProveedor" msprop:Generator_RowChangedName="dtCompraPorProveedorRowChanged" msprop:Generator_RowEvArgName="dtCompraPorProveedorRowChangeEvent" msprop:Generator_RowClassName="dtCompraPorProveedorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idCompra" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCompra" msprop:Generator_ColumnPropNameInRow="idCompra" msprop:Generator_ColumnPropNameInTable="idCompraColumn" msprop:Generator_UserColumnName="idCompra" type="xs:int" />
+              <xs:element name="idProveedor" msprop:Generator_ColumnVarNameInTable="columnidProveedor" msprop:Generator_ColumnPropNameInRow="idProveedor" msprop:Generator_ColumnPropNameInTable="idProveedorColumn" msprop:Generator_UserColumnName="idProveedor" type="xs:int" minOccurs="0" />
+              <xs:element name="fechaCompra" msprop:Generator_ColumnVarNameInTable="columnfechaCompra" msprop:Generator_ColumnPropNameInRow="fechaCompra" msprop:Generator_ColumnPropNameInTable="fechaCompraColumn" msprop:Generator_UserColumnName="fechaCompra" type="xs:dateTime" />
+              <xs:element name="razonSocial" msprop:Generator_ColumnVarNameInTable="columnrazonSocial" msprop:Generator_ColumnPropNameInRow="razonSocial" msprop:Generator_ColumnPropNameInTable="razonSocialColumn" msprop:Generator_UserColumnName="razonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPrestamoPorSocio" msprop:Generator_TableClassName="dtPrestamoPorSocioDataTable" msprop:Generator_TableVarName="tabledtPrestamoPorSocio" msprop:Generator_TablePropName="dtPrestamoPorSocio" msprop:Generator_RowDeletingName="dtPrestamoPorSocioRowDeleting" msprop:Generator_RowChangingName="dtPrestamoPorSocioRowChanging" msprop:Generator_RowEvHandlerName="dtPrestamoPorSocioRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPrestamoPorSocioRowDeleted" msprop:Generator_UserTableName="dtPrestamoPorSocio" msprop:Generator_RowChangedName="dtPrestamoPorSocioRowChanged" msprop:Generator_RowEvArgName="dtPrestamoPorSocioRowChangeEvent" msprop:Generator_RowClassName="dtPrestamoPorSocioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idPrestamo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidPrestamo" msprop:Generator_ColumnPropNameInRow="idPrestamo" msprop:Generator_ColumnPropNameInTable="idPrestamoColumn" msprop:Generator_UserColumnName="idPrestamo" type="xs:int" />
+              <xs:element name="idSocio" msprop:Generator_ColumnVarNameInTable="columnidSocio" msprop:Generator_ColumnPropNameInRow="idSocio" msprop:Generator_ColumnPropNameInTable="idSocioColumn" msprop:Generator_UserColumnName="idSocio" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numeroDocumento" msprop:Generator_ColumnVarNameInTable="columnnumeroDocumento" msprop:Generator_ColumnPropNameInRow="numeroDocumento" msprop:Generator_ColumnPropNameInTable="numeroDocumentoColumn" msprop:Generator_UserColumnName="numeroDocumento" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPrestamoPorLibro" msprop:Generator_TableClassName="dtPrestamoPorLibroDataTable" msprop:Generator_TableVarName="tabledtPrestamoPorLibro" msprop:Generator_RowChangedName="dtPrestamoPorLibroRowChanged" msprop:Generator_TablePropName="dtPrestamoPorLibro" msprop:Generator_RowDeletingName="dtPrestamoPorLibroRowDeleting" msprop:Generator_RowChangingName="dtPrestamoPorLibroRowChanging" msprop:Generator_RowEvHandlerName="dtPrestamoPorLibroRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPrestamoPorLibroRowDeleted" msprop:Generator_RowClassName="dtPrestamoPorLibroRow" msprop:Generator_UserTableName="dtPrestamoPorLibro" msprop:Generator_RowEvArgName="dtPrestamoPorLibroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idPrestamo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidPrestamo" msprop:Generator_ColumnPropNameInRow="idPrestamo" msprop:Generator_ColumnPropNameInTable="idPrestamoColumn" msprop:Generator_UserColumnName="idPrestamo" type="xs:int" />
+              <xs:element name="idLibro" msprop:Generator_ColumnVarNameInTable="columnidLibro" msprop:Generator_ColumnPropNameInRow="idLibro" msprop:Generator_ColumnPropNameInTable="idLibroColumn" msprop:Generator_UserColumnName="idLibro" type="xs:int" />
+              <xs:element name="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_UserColumnName="titulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idSocio" msprop:Generator_ColumnVarNameInTable="columnidSocio" msprop:Generator_ColumnPropNameInRow="idSocio" msprop:Generator_ColumnPropNameInTable="idSocioColumn" msprop:Generator_UserColumnName="idSocio" type="xs:int" minOccurs="0" />
+              <xs:element name="idEstadoPrestamo" msprop:Generator_ColumnVarNameInTable="columnidEstadoPrestamo" msprop:Generator_ColumnPropNameInRow="idEstadoPrestamo" msprop:Generator_ColumnPropNameInTable="idEstadoPrestamoColumn" msprop:Generator_UserColumnName="idEstadoPrestamo" type="xs:int" minOccurs="0" />
+              <xs:element name="fechaPrestamo" msprop:Generator_ColumnVarNameInTable="columnfechaPrestamo" msprop:Generator_ColumnPropNameInRow="fechaPrestamo" msprop:Generator_ColumnPropNameInTable="fechaPrestamoColumn" msprop:Generator_UserColumnName="fechaPrestamo" type="xs:dateTime" />
+              <xs:element name="fechaLimite" msprop:Generator_ColumnVarNameInTable="columnfechaLimite" msprop:Generator_ColumnPropNameInRow="fechaLimite" msprop:Generator_ColumnPropNameInTable="fechaLimiteColumn" msprop:Generator_UserColumnName="fechaLimite" type="xs:dateTime" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+              <xs:element name="idDetallePrestamo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetallePrestamo" msprop:Generator_ColumnPropNameInRow="idDetallePrestamo" msprop:Generator_ColumnPropNameInTable="idDetallePrestamoColumn" msprop:Generator_UserColumnName="idDetallePrestamo" type="xs:int" />
+              <xs:element name="idEstadoDetallePrestamo" msprop:Generator_ColumnVarNameInTable="columnidEstadoDetallePrestamo" msprop:Generator_ColumnPropNameInRow="idEstadoDetallePrestamo" msprop:Generator_ColumnPropNameInTable="idEstadoDetallePrestamoColumn" msprop:Generator_UserColumnName="idEstadoDetallePrestamo" type="xs:int" minOccurs="0" />
+              <xs:element name="idEjemplar" msprop:Generator_ColumnVarNameInTable="columnidEjemplar" msprop:Generator_ColumnPropNameInRow="idEjemplar" msprop:Generator_ColumnPropNameInTable="idEjemplarColumn" msprop:Generator_UserColumnName="idEjemplar" type="xs:int" />
+              <xs:element name="añoEdicion" msprop:Generator_ColumnVarNameInTable="columnañoEdicion" msprop:Generator_ColumnPropNameInRow="añoEdicion" msprop:Generator_ColumnPropNameInTable="añoEdicionColumn" msprop:Generator_UserColumnName="añoEdicion" type="xs:int" />
+              <xs:element name="idGenero" msprop:Generator_ColumnVarNameInTable="columnidGenero" msprop:Generator_ColumnPropNameInRow="idGenero" msprop:Generator_ColumnPropNameInTable="idGeneroColumn" msprop:Generator_UserColumnName="idGenero" type="xs:int" minOccurs="0" />
+              <xs:element name="fechaDevolucion" msprop:Generator_ColumnVarNameInTable="columnfechaDevolucion" msprop:Generator_ColumnPropNameInRow="fechaDevolucion" msprop:Generator_ColumnPropNameInTable="fechaDevolucionColumn" msprop:Generator_UserColumnName="fechaDevolucion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IDLIBRO1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDLIBRO1" msprop:Generator_ColumnPropNameInRow="IDLIBRO1" msprop:Generator_ColumnPropNameInTable="IDLIBRO1Column" msprop:Generator_UserColumnName="IDLIBRO1" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtLibroPorAño" msprop:Generator_TableClassName="dtLibroPorAñoDataTable" msprop:Generator_TableVarName="tabledtLibroPorAño" msprop:Generator_RowChangedName="dtLibroPorAñoRowChanged" msprop:Generator_TablePropName="dtLibroPorAño" msprop:Generator_RowDeletingName="dtLibroPorAñoRowDeleting" msprop:Generator_RowChangingName="dtLibroPorAñoRowChanging" msprop:Generator_RowEvHandlerName="dtLibroPorAñoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtLibroPorAñoRowDeleted" msprop:Generator_RowClassName="dtLibroPorAñoRow" msprop:Generator_UserTableName="dtLibroPorAño" msprop:Generator_RowEvArgName="dtLibroPorAñoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="añoEdicion" msprop:Generator_ColumnVarNameInTable="columnañoEdicion" msprop:Generator_ColumnPropNameInRow="añoEdicion" msprop:Generator_ColumnPropNameInTable="añoEdicionColumn" msprop:Generator_UserColumnName="añoEdicion" type="xs:int" />
+              <xs:element name="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_UserColumnName="titulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idLibro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidLibro" msprop:Generator_ColumnPropNameInRow="idLibro" msprop:Generator_ColumnPropNameInTable="idLibroColumn" msprop:Generator_UserColumnName="idLibro" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtProveedoresPorCiudad" msprop:Generator_TableClassName="dtProveedoresPorCiudadDataTable" msprop:Generator_TableVarName="tabledtProveedoresPorCiudad" msprop:Generator_TablePropName="dtProveedoresPorCiudad" msprop:Generator_RowDeletingName="dtProveedoresPorCiudadRowDeleting" msprop:Generator_RowChangingName="dtProveedoresPorCiudadRowChanging" msprop:Generator_RowEvHandlerName="dtProveedoresPorCiudadRowChangeEventHandler" msprop:Generator_RowDeletedName="dtProveedoresPorCiudadRowDeleted" msprop:Generator_UserTableName="dtProveedoresPorCiudad" msprop:Generator_RowChangedName="dtProveedoresPorCiudadRowChanged" msprop:Generator_RowEvArgName="dtProveedoresPorCiudadRowChangeEvent" msprop:Generator_RowClassName="dtProveedoresPorCiudadRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idProveedor" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidProveedor" msprop:Generator_ColumnPropNameInRow="idProveedor" msprop:Generator_ColumnPropNameInTable="idProveedorColumn" msprop:Generator_UserColumnName="idProveedor" type="xs:int" />
+              <xs:element name="razonSocial" msprop:Generator_ColumnVarNameInTable="columnrazonSocial" msprop:Generator_ColumnPropNameInRow="razonSocial" msprop:Generator_ColumnPropNameInTable="razonSocialColumn" msprop:Generator_UserColumnName="razonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idBarrio" msprop:Generator_ColumnVarNameInTable="columnidBarrio" msprop:Generator_ColumnPropNameInRow="idBarrio" msprop:Generator_ColumnPropNameInTable="idBarrioColumn" msprop:Generator_UserColumnName="idBarrio" type="xs:int" minOccurs="0" />
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:int" />
+              <xs:element name="mail" msprop:Generator_ColumnVarNameInTable="columnmail" msprop:Generator_ColumnPropNameInRow="mail" msprop:Generator_ColumnPropNameInTable="mailColumn" msprop:Generator_UserColumnName="mail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCiudad" msprop:Generator_ColumnVarNameInTable="columnidCiudad" msprop:Generator_ColumnPropNameInRow="idCiudad" msprop:Generator_ColumnPropNameInTable="idCiudadColumn" msprop:Generator_UserColumnName="idCiudad" type="xs:int" minOccurs="0" />
+              <xs:element name="Barrio" msprop:Generator_ColumnVarNameInTable="columnBarrio" msprop:Generator_ColumnPropNameInRow="Barrio" msprop:Generator_ColumnPropNameInTable="BarrioColumn" msprop:Generator_UserColumnName="Barrio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="Ciudad" msprop:Generator_ColumnVarNameInTable="columnCiudad" msprop:Generator_ColumnPropNameInRow="Ciudad" msprop:Generator_ColumnPropNameInTable="CiudadColumn" msprop:Generator_UserColumnName="Ciudad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:idLibro" />
+    </xs:unique>
+    <xs:unique name="dtCompraPorProveedor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtCompraPorProveedor" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:unique>
+    <xs:unique name="dtPrestamoPorSocio_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtPrestamoPorSocio" />
+      <xs:field xpath="mstns:idPrestamo" />
+    </xs:unique>
+    <xs:unique name="dtPrestamoPorLibro_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtPrestamoPorLibro" />
+      <xs:field xpath="mstns:idPrestamo" />
+    </xs:unique>
+    <xs:unique name="dtLibroPorAño_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtLibroPorAño" />
+      <xs:field xpath="mstns:idLibro" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

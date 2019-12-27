@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosPrestamos" targetNamespace="http://tempuri.org/DatosPrestamos.xsd" xmlns:mstns="http://tempuri.org/DatosPrestamos.xsd" xmlns="http://tempuri.org/DatosPrestamos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="biblioteca1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="biblioteca1ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TP_Aplicaciones_Visuales.Properties.Settings.GlobalReference.Default.biblioteca1ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtPrestamosTableAdapter" GeneratorDataComponentClassName="dtPrestamosTableAdapter" Name="dtPrestamos" UserDataComponentName="dtPrestamosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="biblioteca1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillPrestamos" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPrestamos" GeneratorSourceName="FillPrestamos" GetMethodModifier="Public" GetMethodName="GetDataPrestamos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPrestamos" UserSourceName="FillPrestamos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Prestamo.idPrestamo, Prestamo.idSocio, Prestamo.idEstadoPrestamo, Prestamo.fechaPrestamo, Prestamo.fechaLimite, Socio.nombre, Socio.apellido, Socio.idSocio AS Expr1, Libro.titulo, 
+                         EstadoPrestamo.nombre AS Expr2
+FROM            Prestamo INNER JOIN
+                         DetallePrestamo ON Prestamo.idPrestamo = DetallePrestamo.idPrestamo INNER JOIN
+                         Socio ON Prestamo.idSocio = Socio.idSocio INNER JOIN
+                         Libro ON DetallePrestamo.idLibro = Libro.idLibro INNER JOIN
+                         EstadoPrestamo ON Prestamo.idEstadoPrestamo = EstadoPrestamo.idEstadoPrestamo
+WHERE        (Prestamo.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idPrestamo" DataSetColumn="idPrestamo" />
+              <Mapping SourceColumn="idSocio" DataSetColumn="idSocio" />
+              <Mapping SourceColumn="idEstadoPrestamo" DataSetColumn="idEstadoPrestamo" />
+              <Mapping SourceColumn="fechaPrestamo" DataSetColumn="fechaPrestamo" />
+              <Mapping SourceColumn="fechaLimite" DataSetColumn="fechaLimite" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosPrestamos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosPrestamos" msprop:Generator_UserDSName="DatosPrestamos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPrestamos" msprop:Generator_TableClassName="dtPrestamosDataTable" msprop:Generator_TableVarName="tabledtPrestamos" msprop:Generator_TablePropName="dtPrestamos" msprop:Generator_RowDeletingName="dtPrestamosRowDeleting" msprop:Generator_RowChangingName="dtPrestamosRowChanging" msprop:Generator_RowEvHandlerName="dtPrestamosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPrestamosRowDeleted" msprop:Generator_UserTableName="dtPrestamos" msprop:Generator_RowChangedName="dtPrestamosRowChanged" msprop:Generator_RowEvArgName="dtPrestamosRowChangeEvent" msprop:Generator_RowClassName="dtPrestamosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idPrestamo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidPrestamo" msprop:Generator_ColumnPropNameInRow="idPrestamo" msprop:Generator_ColumnPropNameInTable="idPrestamoColumn" msprop:Generator_UserColumnName="idPrestamo" type="xs:int" />
+              <xs:element name="idSocio" msprop:Generator_ColumnVarNameInTable="columnidSocio" msprop:Generator_ColumnPropNameInRow="idSocio" msprop:Generator_ColumnPropNameInTable="idSocioColumn" msprop:Generator_UserColumnName="idSocio" type="xs:int" minOccurs="0" />
+              <xs:element name="idEstadoPrestamo" msprop:Generator_ColumnVarNameInTable="columnidEstadoPrestamo" msprop:Generator_ColumnPropNameInRow="idEstadoPrestamo" msprop:Generator_ColumnPropNameInTable="idEstadoPrestamoColumn" msprop:Generator_UserColumnName="idEstadoPrestamo" type="xs:int" minOccurs="0" />
+              <xs:element name="fechaPrestamo" msprop:Generator_ColumnVarNameInTable="columnfechaPrestamo" msprop:Generator_ColumnPropNameInRow="fechaPrestamo" msprop:Generator_ColumnPropNameInTable="fechaPrestamoColumn" msprop:Generator_UserColumnName="fechaPrestamo" type="xs:dateTime" />
+              <xs:element name="fechaLimite" msprop:Generator_ColumnVarNameInTable="columnfechaLimite" msprop:Generator_ColumnPropNameInRow="fechaLimite" msprop:Generator_ColumnPropNameInTable="fechaLimiteColumn" msprop:Generator_UserColumnName="fechaLimite" type="xs:dateTime" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_UserColumnName="titulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

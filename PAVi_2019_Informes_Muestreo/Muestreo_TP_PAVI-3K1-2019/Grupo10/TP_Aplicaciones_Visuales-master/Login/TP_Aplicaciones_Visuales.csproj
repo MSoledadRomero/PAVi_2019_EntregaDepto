@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78BBFC87-FC6D-47C1-B81C-504973B9179D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TP_Aplicaciones_Visuales</RootNamespace>
+    <AssemblyName>TP_Aplicaciones_Visuales</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\AutorService.cs" />
+    <Compile Include="BusinessLayer\BarrioService.cs" />
+    <Compile Include="BusinessLayer\CiudadService.cs" />
+    <Compile Include="BusinessLayer\CompraService.cs" />
+    <Compile Include="BusinessLayer\detalleCompraService.cs" />
+    <Compile Include="BusinessLayer\DetallePrestamoService.cs" />
+    <Compile Include="BusinessLayer\EditorialService.cs" />
+    <Compile Include="BusinessLayer\EjemplarService.cs" />
+    <Compile Include="BusinessLayer\EstadoDetallePrestamoService.cs" />
+    <Compile Include="BusinessLayer\EstadoEjemplarService.cs" />
+    <Compile Include="BusinessLayer\estadoPrestamoService.cs" />
+    <Compile Include="BusinessLayer\GeneroService.cs" />
+    <Compile Include="BusinessLayer\LibroService.cs" />
+    <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\PrestamoService.cs" />
+    <Compile Include="BusinessLayer\ProveedorService.cs" />
+    <Compile Include="BusinessLayer\SocioService.cs" />
+    <Compile Include="BusinessLayer\TipoDocumentoService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="DataAccess\AutorDAO.cs" />
+    <Compile Include="DataAccess\BarrioDAO.cs" />
+    <Compile Include="DataAccess\CiudadDAO.cs" />
+    <Compile Include="DataAccess\CompraDAO.cs" />
+    <Compile Include="DataAccess\DBConexion.cs" />
+    <Compile Include="DataAccess\detalleCompraDAO.cs" />
+    <Compile Include="DataAccess\DetallePrestamoDAO.cs" />
+    <Compile Include="DataAccess\EditorialDAO.cs" />
+    <Compile Include="DataAccess\EjemplarDAO.cs" />
+    <Compile Include="DataAccess\estadoDetallePrestamoDAO.cs" />
+    <Compile Include="DataAccess\EstadoEjemplarDAO.cs" />
+    <Compile Include="DataAccess\estadoPrestamoDAO.cs" />
+    <Compile Include="DataAccess\GeneroDAO.cs" />
+    <Compile Include="DataAccess\LibroDAO.cs" />
+    <Compile Include="DataAccess\PerfilDAO.cs" />
+    <Compile Include="DataAccess\PrestamoDAO.cs" />
+    <Compile Include="DataAccess\ProveedorDAO.cs" />
+    <Compile Include="DataAccess\SocioDAO.cs" />
+    <Compile Include="DataAccess\TipoDocumentoDAO.cs" />
+    <Compile Include="DataAccess\UsuarioDAO.cs" />
+    <Compile Include="Entities\Compra.cs" />
+    <Compile Include="Entities\DetalleCompra.cs" />
+    <Compile Include="Entities\EstadoDetallePrestamo.cs" />
+    <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="EstadisticasGraficas\DatosEstadisticasGraficas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticasGraficas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaCompraPorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaCompraPorProveedor.Designer.cs">
+      <DependentUpon>frmEstadisticaCompraPorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaLibroPorAño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaLibroPorAño.Designer.cs">
+      <DependentUpon>frmEstadisticaLibroPorAño.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaLibroPorGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaLibroPorGenero.Designer.cs">
+      <DependentUpon>frmEstadisticaLibroPorGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaPrestamoPorLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaPrestamoPorLibro.Designer.cs">
+      <DependentUpon>frmEstadisticaPrestamoPorLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaPrestamoPorSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticaPrestamoPorSocio.Designer.cs">
+      <DependentUpon>frmEstadisticaPrestamoPorSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticasProveedorPorCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticasGraficas\frmEstadisticasProveedorPorCiudad.Designer.cs">
+      <DependentUpon>frmEstadisticasProveedorPorCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConParametros\DatosReportesConParametros.cs">
+      <DependentUpon>DatosReportesConParametros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMAutor.Designer.cs">
+      <DependentUpon>ABMAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMBarrios.Designer.cs">
+      <DependentUpon>ABMBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMCompra.Designer.cs">
+      <DependentUpon>ABMCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMDetalleCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMDetalleCompra.Designer.cs">
+      <DependentUpon>ABMDetalleCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMDocumento.Designer.cs">
+      <DependentUpon>ABMDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMEditorial.Designer.cs">
+      <DependentUpon>ABMEditorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMGeneros.Designer.cs">
+      <DependentUpon>ABMGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMPrestamos.Designer.cs">
+      <DependentUpon>ABMPrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMProveedor.Designer.cs">
+      <DependentUpon>ABMProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMUsuario.Designer.cs">
+      <DependentUpon>ABMUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarAutor.Designer.cs">
+      <DependentUpon>ConsultarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarBarrios.Designer.cs">
+      <DependentUpon>ConsultarBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarCompra.Designer.cs">
+      <DependentUpon>ConsultarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarDocumento.Designer.cs">
+      <DependentUpon>ConsultarDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarEditorial.Designer.cs">
+      <DependentUpon>ConsultarEditorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarGeneros.Designer.cs">
+      <DependentUpon>ConsultarGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarPrestamo.designer.cs">
+      <DependentUpon>ConsultarPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarProveedor.Designer.cs">
+      <DependentUpon>ConsultarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmInformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmInformes.designer.cs">
+      <DependentUpon>frmInformes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\DetalleLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\DetalleLibro.Designer.cs">
+      <DependentUpon>DetalleLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Principal.designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConParametros\DatosReportesConParametros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosReportesConParametros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteCompraParametrizada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteCompraParametrizada.Designer.cs">
+      <DependentUpon>ReporteCompraParametrizada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteLibrosParametrizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteLibrosParametrizado.Designer.cs">
+      <DependentUpon>ReporteLibrosParametrizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReportePrestamoParametrizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReportePrestamoParametrizado.Designer.cs">
+      <DependentUpon>ReportePrestamoParametrizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteProveedoresParametrizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteProveedoresParametrizado.Designer.cs">
+      <DependentUpon>ReporteProveedoresParametrizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteSociosParametrizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteConParametros\ReporteSociosParametrizados.Designer.cs">
+      <DependentUpon>ReporteSociosParametrizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DatosCompras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DatosEditorial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEditorial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DatosLibros.cs">
+      <DependentUpon>DatosLibros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DatosLibros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosLibros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DatosPrestamos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosPrestamos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DatosProveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosProveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DatosSocios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosSocios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteCompras.Designer.cs">
+      <DependentUpon>ReporteCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEditoriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteEditoriales.Designer.cs">
+      <DependentUpon>ReporteEditoriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteLibros.designer.cs">
+      <DependentUpon>ReporteLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamos.Designer.cs">
+      <DependentUpon>ReportePrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteProveedores.Designer.cs">
+      <DependentUpon>ReporteProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteSocio.Designer.cs">
+      <DependentUpon>ReporteSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soporte\AbstractDataAccess.cs" />
+    <Compile Include="Entities\Autor.cs" />
+    <Compile Include="Entities\Barrio.cs" />
+    <Compile Include="Entities\Ciudad.cs" />
+    <Compile Include="Entities\DetallePedido.cs" />
+    <Compile Include="Entities\DetallePrestamo.cs" />
+    <Compile Include="Entities\Editorial.cs" />
+    <Compile Include="Entities\Ejemplar.cs" />
+    <Compile Include="Entities\EstadoEjemplar.cs" />
+    <Compile Include="Entities\EstadoPedido.cs" />
+    <Compile Include="Entities\EstadoPrestamo.cs" />
+    <Compile Include="Entities\Genero.cs" />
+    <Compile Include="Entities\Libro.cs" />
+    <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\Prestamo.cs" />
+    <Compile Include="Entities\Proveedor.cs" />
+    <Compile Include="Entities\Socio.cs" />
+    <Compile Include="Entities\TipoDocumento.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\ABMLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMLibro.Designer.cs">
+      <DependentUpon>ABMLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarLibros.Designer.cs">
+      <DependentUpon>ConsultarLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ConsultarSocio.Designer.cs">
+      <DependentUpon>ConsultarSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMSocio.Designer.cs">
+      <DependentUpon>ABMSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Soporte\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Soporte\SoporteForm.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="EstadisticasGraficas\EstadisticaComprasPorProveedoresRDLC.rdlc" />
+    <EmbeddedResource Include="EstadisticasGraficas\EstadisticaLibrosPorAñoRDLC.rdlc" />
+    <EmbeddedResource Include="EstadisticasGraficas\EstadisticaLibrosPorGeneroRDLC.rdlc" />
+    <EmbeddedResource Include="EstadisticasGraficas\EstadisticaPrestamoPorSocioRDLC.rdlc" />
+    <EmbeddedResource Include="EstadisticasGraficas\EstadisticaProveedoresPorCiudadRDLC.rdlc" />
+    <EmbeddedResource Include="EstadisticasGraficas\frmEstadisticaCompraPorProveedor.resx">
+      <DependentUpon>frmEstadisticaCompraPorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticasGraficas\frmEstadisticaLibroPorAño.resx">
+      <DependentUpon>frmEstadisticaLibroPorAño.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticasGraficas\frmEstadisticaLibroPorGenero.resx">
+      <DependentUpon>frmEstadisticaLibroPorGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticasGraficas\frmEstadisticaPrestamoPorLibro.resx">
+      <DependentUpon>frmEstadisticaPrestamoPorLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticasGraficas\frmEstadisticaPrestamoPorSocio.resx">
+      <DependentUpon>frmEstadisticaPrestamoPorSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticasGraficas\EstadisticaPrestamoPorLibroRDLC.rdlc" />
+    <EmbeddedResource Include="EstadisticasGraficas\frmEstadisticasProveedorPorCiudad.resx">
+      <DependentUpon>frmEstadisticasProveedorPorCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteConParametros\InformeCompraParametrizado.rdlc" />
+    <EmbeddedResource Include="ReporteConParametros\InformeLibrosParametrizados.rdlc" />
+    <EmbeddedResource Include="GUILayer\ABMAutor.resx">
+      <DependentUpon>ABMAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMBarrios.resx">
+      <DependentUpon>ABMBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMCompra.resx">
+      <DependentUpon>ABMCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMDetalleCompra.resx">
+      <DependentUpon>ABMDetalleCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMDocumento.resx">
+      <DependentUpon>ABMDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMEditorial.resx">
+      <DependentUpon>ABMEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMGeneros.resx">
+      <DependentUpon>ABMGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMLibro.resx">
+      <DependentUpon>ABMLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMPrestamos.resx">
+      <DependentUpon>ABMPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMProveedor.resx">
+      <DependentUpon>ABMProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMUsuario.resx">
+      <DependentUpon>ABMUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarAutor.resx">
+      <DependentUpon>ConsultarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarBarrios.resx">
+      <DependentUpon>ConsultarBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarCompra.resx">
+      <DependentUpon>ConsultarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarDocumento.resx">
+      <DependentUpon>ConsultarDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarEditorial.resx">
+      <DependentUpon>ConsultarEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarGeneros.resx">
+      <DependentUpon>ConsultarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarLibros.resx">
+      <DependentUpon>ConsultarLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarPrestamo.resx">
+      <DependentUpon>ConsultarPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarProveedor.resx">
+      <DependentUpon>ConsultarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ConsultarSocio.resx">
+      <DependentUpon>ConsultarSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\DetalleLibro.resx">
+      <DependentUpon>DetalleLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmInformes.resx">
+      <DependentUpon>frmInformes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMSocio.resx">
+      <DependentUpon>ABMSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteConParametros\InformePrestamosParametrizados.rdlc" />
+    <EmbeddedResource Include="ReporteConParametros\InformeProveedoresConParametros.rdlc" />
+    <EmbeddedResource Include="ReporteConParametros\InformeSociosParametrizados.rdlc" />
+    <EmbeddedResource Include="ReporteConParametros\ReporteCompraParametrizada.resx">
+      <DependentUpon>ReporteCompraParametrizada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteConParametros\ReporteLibrosParametrizado.resx">
+      <DependentUpon>ReporteLibrosParametrizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteConParametros\ReportePrestamoParametrizado.resx">
+      <DependentUpon>ReportePrestamoParametrizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteConParametros\ReporteProveedoresParametrizado.resx">
+      <DependentUpon>ReporteProveedoresParametrizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteConParametros\ReporteSociosParametrizados.resx">
+      <DependentUpon>ReporteSociosParametrizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\InformeCompras.rdlc" />
+    <EmbeddedResource Include="Reportes\InformeEditorial.rdlc" />
+    <EmbeddedResource Include="Reportes\InformeLibros.rdlc" />
+    <EmbeddedResource Include="Reportes\InformePrestamos.rdlc" />
+    <EmbeddedResource Include="Reportes\InformeProveedores.rdlc" />
+    <EmbeddedResource Include="Reportes\InformeSocios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteCompras.resx">
+      <DependentUpon>ReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteEditoriales.resx">
+      <DependentUpon>ReporteEditoriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteLibros.resx">
+      <DependentUpon>ReporteLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePrestamos.resx">
+      <DependentUpon>ReportePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteProveedores.resx">
+      <DependentUpon>ReporteProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteSocio.resx">
+      <DependentUpon>ReporteSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="EstadisticasGraficas\DatosEstadisticasGraficas.xsc">
+      <DependentUpon>DatosEstadisticasGraficas.xsd</DependentUpon>
+    </None>
+    <None Include="EstadisticasGraficas\DatosEstadisticasGraficas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticasGraficas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="EstadisticasGraficas\DatosEstadisticasGraficas.xss">
+      <DependentUpon>DatosEstadisticasGraficas.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\TP_Aplicaciones_Visuales.Formularios.frmConsultarLibros.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Materiales\Chicos\LibroImagen.bmp" />
+    <Content Include="Materiales\Chicos\LibroImagen.jpg" />
+    <Content Include="Materiales\Chicos\libros.gif" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="ReporteConParametros\DatosReportesConParametros.xsc">
+      <DependentUpon>DatosReportesConParametros.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteConParametros\DatosReportesConParametros.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosReportesConParametros.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReporteConParametros\DatosReportesConParametros.xss">
+      <DependentUpon>DatosReportesConParametros.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosCompras.xsc">
+      <DependentUpon>DatosCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosCompras.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosCompras.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DatosCompras.xss">
+      <DependentUpon>DatosCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosEditorial.xsc">
+      <DependentUpon>DatosEditorial.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosEditorial.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEditorial.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DatosEditorial.xss">
+      <DependentUpon>DatosEditorial.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosLibros.xsc">
+      <DependentUpon>DatosLibros.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosLibros.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosLibros.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\DatosLibros.xss">
+      <DependentUpon>DatosLibros.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosPrestamos.xsc">
+      <DependentUpon>DatosPrestamos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosPrestamos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosPrestamos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DatosPrestamos.xss">
+      <DependentUpon>DatosPrestamos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosProveedores.xsc">
+      <DependentUpon>DatosProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosProveedores.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosProveedores.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\DatosProveedores.xss">
+      <DependentUpon>DatosProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosSocios.xsc">
+      <DependentUpon>DatosSocios.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DatosSocios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosSocios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DatosSocios.xss">
+      <DependentUpon>DatosSocios.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\InformesImagen2.jpeg" />
+    <None Include="Materiales\Chicos\ProveedorImagen.jpg" />
+    <None Include="Materiales\Grandes\ProveedorImagen.jpg" />
+    <None Include="Materiales\Chicos\SocioImagen.jpg" />
+    <Content Include="Materiales\Chicos\Soñar-con-libros.png" />
+    <Content Include="Materiales\Grandes\LibroImagen.jpg" />
+    <Content Include="Materiales\Grandes\libros.gif" />
+    <Content Include="Materiales\Grandes\Soñar-con-libros.png" />
+    <None Include="Materiales\Iconos\Libro.png" />
+    <None Include="Materiales\Iconos\Chicos\Libro.png" />
+    <None Include="Materiales\Iconos\Chicos\grafico-de-linea.svg" />
+    <None Include="Materiales\Iconos\Chicos\Autor %284%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Autor.png" />
+    <None Include="Materiales\Iconos\Chicos\Compras %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Compras.png" />
+    <None Include="Materiales\Iconos\Chicos\direccion %281%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Documento.png" />
+    <None Include="Materiales\Iconos\Chicos\Documento2.png" />
+    <None Include="Materiales\Iconos\Chicos\Documento3.png" />
+    <None Include="Materiales\Iconos\Chicos\Editorial.png" />
+    <None Include="Materiales\Iconos\Chicos\Grafico %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Grafico.png" />
+    <None Include="Materiales\Iconos\Chicos\Libro %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Libro2.png" />
+    <None Include="Materiales\Iconos\Chicos\Libro3.png" />
+    <None Include="Materiales\Iconos\Chicos\Prestamo %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Prestamo %283%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Prestamo %284%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Prestamo.png" />
+    <None Include="Materiales\Iconos\Chicos\Socio %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Socio.png" />
+    <None Include="Materiales\Iconos\Chicos\Socio2.png" />
+    <None Include="Materiales\Iconos\Chicos\Ubicacion %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Ubicacion.png" />
+    <None Include="Materiales\Iconos\Chicos\Autor %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Autor %283%29.png" />
+    <None Include="Materiales\Imagenes\Chicos\SocioImagen.jpg" />
+    <None Include="Materiales\Imagenes\Chicos\LibroImagen.jpg" />
+    <None Include="Materiales\Imagenes\Chicos\ProveedorImagen.jpg" />
+    <None Include="Materiales\Iconos\Chicos\Documento %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Libro %283%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Genero.png" />
+    <None Include="Materiales\Iconos\Chicos\Genero %282%29.png" />
+    <None Include="Materiales\Iconos\Chicos\Proveedor.png" />
+    <Content Include="Materiales\LibroImagenC.jpg" />
+    <None Include="Resources\LibroImagen.bmp" />
+    <None Include="Resources\imagenLibro.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

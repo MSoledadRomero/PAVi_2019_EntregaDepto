@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D69520B-7EF4-4F24-9BDE-70267E07A240}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrabajoPractico</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\ClienteService.cs" />
+    <Compile Include="BusinessLayer\MarcaService.cs" />
+    <Compile Include="BusinessLayer\EmpleadoService.cs" />
+    <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\PrendaService.cs" />
+    <Compile Include="BusinessLayer\ProveedorService.cs" />
+    <Compile Include="BusinessLayer\TransaccionService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="DataAccessLayer\ClienteDao.cs" />
+    <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\MarcaDao.cs" />
+    <Compile Include="DataAccessLayer\EmpleadoDao.cs" />
+    <Compile Include="DataAccessLayer\PerfilDao.cs" />
+    <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="DataAccessLayer\ProveedorDao.cs" />
+    <Compile Include="DataAccessLayer\TrasaccionDao.cs" />
+    <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="dsClientes.cs">
+      <DependentUpon>dsClientes.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEmpleados.cs">
+      <DependentUpon>dsEmpleados.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsEmpleados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmpleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPerfiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPerfiles.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPrenda.cs">
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsPrenda.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\DsPrendaxMarca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsPrendaxMarca.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsProveedores.cs">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DsProveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Empleado.cs" />
+    <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="Entities\Prenda.cs" />
+    <Compile Include="Entities\Proveedor.cs" />
+    <Compile Include="Entities\TipoFactura.cs" />
+    <Compile Include="Entities\TipoPrenda.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\Venta.cs" />
+    <Compile Include="Entities\VentaDetalle.cs" />
+    <Compile Include="Estadisticas\DsPrendaxTipo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsPrendaxTipo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\DsVentaEstadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsVentaEstadisticas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaClientes.Designer.cs">
+      <DependentUpon>frmEstadisticaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPrendaxMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPrendaxMarca.Designer.cs">
+      <DependentUpon>frmEstadisticaPrendaxMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPrendaxTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPrendaxTipo.Designer.cs">
+      <DependentUpon>frmEstadisticaPrendaxTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaStock.Designer.cs">
+      <DependentUpon>frmEstadisticaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPerfiles.Designer.cs">
+      <DependentUpon>frmEstadisticaPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaEmpleados.Designer.cs">
+      <DependentUpon>frmEstadisticaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticasVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticasVenta.Designer.cs">
+      <DependentUpon>frmEstadisticasVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMCliente.Designer.cs">
+      <DependentUpon>frmABMCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMProveedor.Designer.cs">
+      <DependentUpon>frmABMProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMEmpleado.Designer.cs">
+      <DependentUpon>frmABMEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMMarca.Designer.cs">
+      <DependentUpon>frmABMMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMPerfil.Designer.cs">
+      <DependentUpon>frmABMPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMUsuarios.Designer.cs">
+      <DependentUpon>frmABMUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMPrenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMPrenda.Designer.cs">
+      <DependentUpon>frmABMPrenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmConsulta.Designer.cs">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmDetalle.Designer.cs">
+      <DependentUpon>frmDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmMarca.Designer.cs">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Marca.cs" />
+    <Compile Include="GUILayer\frmPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmPerfil.Designer.cs">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmTransaccion.Designer.cs">
+      <DependentUpon>frmTransaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\frmReporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteClientes.Designer.cs">
+      <DependentUpon>frmReporteClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteEmpleados.Designer.cs">
+      <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportePerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportePerfiles.Designer.cs">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportePrenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportePrenda.Designer.cs">
+      <DependentUpon>frmReportePrenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportePrendaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportePrendaMarca.Designer.cs">
+      <DependentUpon>frmReportePrendaMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportePrendaTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportePrendaTipo.Designer.cs">
+      <DependentUpon>frmReportePrendaTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteProveedores.Designer.cs">
+      <DependentUpon>frmReporteProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\TablaReportes.cs">
+      <DependentUpon>TablaReportes.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\TablaReportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TablaReportes.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Estadisticas\EstadisticaEmpleados.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstadisticaPerfiles.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstadisticaPrendaStock.rdlc" />
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaClientes.resx">
+      <DependentUpon>frmEstadisticaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaPrendaxMarca.resx">
+      <DependentUpon>frmEstadisticaPrendaxMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaPrendaxTipo.resx">
+      <DependentUpon>frmEstadisticaPrendaxTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaStock.resx">
+      <DependentUpon>frmEstadisticaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaPerfiles.resx">
+      <DependentUpon>frmEstadisticaPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaEmpleados.resx">
+      <DependentUpon>frmEstadisticaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\EstadisticaClientes.rdlc" />
+    <EmbeddedResource Include="Estadisticas\frmEstadisticasVenta.resx">
+      <DependentUpon>frmEstadisticasVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\rptEstadisticasPrendaxMarca.rdlc" />
+    <EmbeddedResource Include="Estadisticas\rptEstadisticasVenta.rdlc" />
+    <EmbeddedResource Include="Estadisticas\rptEstadisticasVentaxTipo.rdlc" />
+    <EmbeddedResource Include="GUILayer\frmABMCliente.resx">
+      <DependentUpon>frmABMCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMProveedor.resx">
+      <DependentUpon>frmABMProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMEmpleado.resx">
+      <DependentUpon>frmABMEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMMarca.resx">
+      <DependentUpon>frmABMMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMPerfil.resx">
+      <DependentUpon>frmABMPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMUsuarios.resx">
+      <DependentUpon>frmABMUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMPrenda.resx">
+      <DependentUpon>frmABMPrenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmConsulta.resx">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmDetalle.resx">
+      <DependentUpon>frmDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmMarca.resx">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmPerfil.resx">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmTransaccion.resx">
+      <DependentUpon>frmTransaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\frmReporteClientes.resx">
+      <DependentUpon>frmReporteClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteEmpleados.resx">
+      <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportePerfiles.resx">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportePrenda.resx">
+      <DependentUpon>frmReportePrenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportePrendaMarca.resx">
+      <DependentUpon>frmReportePrendaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportePrendaTipo.resx">
+      <DependentUpon>frmReportePrendaTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteProveedores.resx">
+      <DependentUpon>frmReporteProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteClientes.rdlc" />
+    <EmbeddedResource Include="Reportes\Reporte1.rdlc" />
+    <EmbeddedResource Include="Reportes\Reporte2.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePerfiles.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePrendas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteProveedores.rdlc" />
+    <None Include="dsClientes.xsc">
+      <DependentUpon>dsClientes.xsd</DependentUpon>
+    </None>
+    <None Include="dsClientes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsClientes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsClientes.xss">
+      <DependentUpon>dsClientes.xsd</DependentUpon>
+    </None>
+    <None Include="dsEmpleados.xsc">
+      <DependentUpon>dsEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="dsEmpleados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmpleados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsEmpleados.xss">
+      <DependentUpon>dsEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="dsPerfiles.xsc">
+      <DependentUpon>dsPerfiles.xsd</DependentUpon>
+    </None>
+    <None Include="dsPerfiles.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPerfiles.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPerfiles.xss">
+      <DependentUpon>dsPerfiles.xsd</DependentUpon>
+    </None>
+    <None Include="dsPrenda.xsc">
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
+    </None>
+    <None Include="dsPrenda.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPrenda.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPrenda.xss">
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsPrendaxMarca.xsc">
+      <DependentUpon>DsPrendaxMarca.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsPrendaxMarca.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsPrendaxMarca.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Estadisticas\DsPrendaxMarca.xss">
+      <DependentUpon>DsPrendaxMarca.xsd</DependentUpon>
+    </None>
+    <None Include="DsProveedores.xsc">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="DsProveedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsProveedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsProveedores.xss">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsPrendaxTipo.xsc">
+      <DependentUpon>DsPrendaxTipo.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsPrendaxTipo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsPrendaxTipo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\DsPrendaxTipo.xss">
+      <DependentUpon>DsPrendaxTipo.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsVentaEstadisticas.xsc">
+      <DependentUpon>DsVentaEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsVentaEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsVentaEstadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\DsVentaEstadisticas.xss">
+      <DependentUpon>DsVentaEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\TablaReportes.xsc">
+      <DependentUpon>TablaReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\TablaReportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TablaReportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\TablaReportes.xss">
+      <DependentUpon>TablaReportes.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
